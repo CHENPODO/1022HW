@@ -1,0 +1,171 @@
+/* 清除 margin 和 padding，並且統一 box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 限制區域的最大寬度 */
+.sec1 {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* 產品盒子樣式 */
+.box2 {
+  width: 220px;
+  height: 350px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+ /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 2px 2px 3px rgba(142, 142, 142, 0.599);
+}
+.onsale{
+  position: absolute;
+  top: 10px;
+  text-align: center;
+  width: 60px;
+  font-size: 12px;
+  padding: 2px;
+  background-color: red;
+  color: white;
+}
+
+
+
+/* 圖片容器樣式，設定 relative 以便內部按鈕絕對定位 */
+.h111 {
+  position: relative;
+  overflow: hidden; /* 隱藏超出的部分 */
+}
+
+/* 圖片樣式，確保圖片的寬度為 100% */
+.card-img {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  transition: opacity 0.5s ease; /* 添加過渡效果 */
+}
+
+/* 隱藏第二張圖片 */
+.card-img.img-2 {
+  position: absolute; /* 使第二張圖片絕對定位 */
+  top: 0; /* 對齊到容器的頂部 */
+  left: 0; /* 對齊到容器的左側 */
+  opacity: 0; /* 初始隱藏 */
+}
+
+/* 當鼠標懸停在 .h111 上時，顯示第二張圖片 */
+.h111:hover .card-img.img-1 {
+  opacity: 0; /* 第一張圖片消失 */
+}
+
+.h111:hover .card-img.img-2 {
+  opacity: 1; /* 第二張圖片顯示 */
+}
+
+
+
+/* 按鈕容器的樣式，設定 absolute 讓按鈕定位於圖片底部 */
+.btn {
+  position: absolute; /* 絕對定位讓按鈕相對於 .h111 容器 */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+/* Quick View 按鈕樣式，初始高度為 0 */
+.quickview-btn {
+  text-align: center;
+  background-color: rgb(184, 71, 71); /* 紅色背景 */
+  width: 100%;
+  height: 0; /* 初始高度為 0，隱藏按鈕 */
+  line-height: 30px;
+  color: white;
+  text-decoration: none;
+  overflow: hidden; /* 隱藏內部內容，直到高度增長 */
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: height 0.5s ease; /* 高度變化動畫 */
+}
+
+/* 當鼠標懸停在 .h111 上時，Quick View 按鈕長出來 */
+.h111:hover .quickview-btn {
+  height: 30px; /* 懸停時按鈕的高度變為 30px */
+}
+
+.alink{
+  text-decoration: none;
+  font-size:10px ;
+  color: black;
+}
+
+.alink:hover{
+  color: blue;
+  font-weight: bold;
+}
+
+.APPlink{
+  text-decoration: none;
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+}
+
+.APPlink:hover{
+  color:red;
+  font-weight: bold;
+}
+
+.stars{
+  color: rgba(128, 128, 128, 0.589);
+}
+
+.p2{
+  display: flex;  
+  gap:10px;
+  font-size: 12px;
+}
+
+.delline{
+  text-decoration: line-through;
+}
+
+.c-cart{
+  font-size: 50px;
+  color: rgba(128, 128, 128, 0.589);
+  text-align: end;
+}
+
+.fa-solid{
+  text-align: end;
+  color:  rgba(91, 91, 91, 0.532);
+  position: absolute;
+  right: 20px;
+  top: 33px;
+}
+.cart{
+  position: relative;
+  width: 100%;
+  top: -20px;
+  right: -12px;
+}
+
+.fa-solid:hover{
+  color: blue;
+  cursor: pointer;
+}
+.c-cart:hover{
+  color: blue;
+  cursor: pointer;
+}
+
